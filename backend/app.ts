@@ -1,8 +1,13 @@
-import express, { Request, Response, NextFunction } from 'express'
+import express, { json } from 'express'
+
+import commentRoutes from './routes/commentRoutes'
 
 const app = express()
 
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
+app.use(json({ type: 'POST' }))
+app.use('/comments/', commentRoutes)
+
+app.get('/', (_, res) => {
   res.send('Okay')
 })
 
