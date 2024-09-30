@@ -2,5 +2,5 @@
 // TODO: Render login screen if NOT loggedUser
 </script>
 <template>
-  <main></main>
+  <main><h1>Hello world!</h1></main>
 </template>

@@ -2,6 +2,9 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      sans: ['Rubik', 'system-ui', 'sans-serif']
+    },
     colors: {
       white: 'hsl(0, 0%, 100%)',
       'blue-200': 'hsl(239, 57%, 85%)',
