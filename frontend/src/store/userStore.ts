@@ -3,12 +3,12 @@ import { defineStore } from 'pinia'
 import mockData from '../../data.json'
 import { type User } from '@/types/user'
 
-type UserStoreType = {
+type UserStoreState = {
   loggedUser: User | null
 }
 
-const useUserStore = defineStore<string, UserStoreType>('users', {
-  state: () => ({
+const useUserStore = defineStore('users', {
+  state: (): UserStoreState => ({
     loggedUser: mockData.currentUser
   })
 })
