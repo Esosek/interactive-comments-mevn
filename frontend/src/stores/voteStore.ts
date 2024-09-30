@@ -16,8 +16,10 @@ const useVoteStore = defineStore('votes', {
     userVotes: {}
   }),
   getters: {
-    getCommentVotesById: (state) => (commentId: string) => state.commentVotes[commentId],
-    hasUserVoted: (state) => (commentId: string) => Object.keys(state.userVotes).includes(commentId)
+    getCommentVotesById: (state) => (commentId: string) =>
+      state.commentVotes[commentId],
+    hasUserVoted: (state) => (commentId: string) =>
+      Object.keys(state.userVotes).includes(commentId)
   },
   actions: {
     setVote(commentId: string, voteType: boolean) {
