@@ -13,6 +13,11 @@ export default {
       'neutral-200': 'hsl(223, 19%, 93%)',
       'neutral-400': 'hsl(211, 10%, 45%)'
     },
+    fontWeight: {
+      normal: 400,
+      semibold: 500,
+      bold: 700
+    },
     extend: {}
   },
   plugins: []
