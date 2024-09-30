@@ -11,7 +11,7 @@ const useCommentStore = defineStore('comments', {
     addComment(commentText: string, parentId?: string) {
       const [replyingTo, content] = splitReplyText(commentText)
       const newComment: UserComment = {
-        id: (Math.random() * 100).toString(), // TODO: Replace with nanoid
+        id: (Math.random() * 100).toString(),
         content,
         createdAt: new Date().toString(),
         user: {
@@ -23,6 +23,18 @@ const useCommentStore = defineStore('comments', {
         replyingTo
       }
       this.comments.push(newComment)
+    },
+    removeComment(commentId: string) {
+      const commentIndex = this.comments.findIndex((c) => c.id === commentId)
+      if (commentIndex < 0) return
+      this.comments.splice(commentIndex, 1)
+    },
+    editComment(commentId: string, commentText: string) {
+      const editedComment = this.comments.find((c) => c.id === commentId)
+      if (!editedComment) return
+      const [replyingTo, content] = splitReplyText(commentText)
+      editedComment.replyingTo = replyingTo
+      editedComment.content = content
     }
   }
 })
